@@ -1,0 +1,29 @@
+<?php
+	function AficherPublicationRedacteur($listePublication)
+	{?><section class="contenu">	
+			
+		
+		<h1 align="center">Liste de vos articles</h1>
+			<table border="1" align="center" width="80%" cellpadding="2" cellspacing="4" bgcolor="gray" bordercolor="black">
+				<?php 
+				foreach($listePublication as $Key =>$value)
+					{
+						echo ''?>
+							<tr>
+								<td rowspan="3"><img src="presentation\\images\\<?php echo $value["LOGO_JEU"]?>"width="90%""</td>
+								<td colspan="2" align="center"><?php echo $value["NOM_JEU"]?></a></td>
+							</tr>
+							<tr>
+								<td colspan="2"><?php echo utf8_encode($value["DESCRIPTIF_JEU"])?></td>
+							</tr> 
+								<td align="center"><form action="JVModification.php?jeu=<?php echo $value["ID_JEU"]?>"method="POST"><input type="submit" value="Modifier" onclick="submit()"></form></td>
+								<td align="center"><input type="button" value="Supprimer" onclick=""></td>
+							<?php '';
+					}?>
+			
+			</table>
+	
+		</section>
+<?php
+	}
+?>
